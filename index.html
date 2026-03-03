@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siva K | Full Stack Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+   <header class="header">
+        <a href="#" class="logo">Siva K</a>
+        <i class='bx bx-menu' id="menu-icon"></i> 
+        
+        <nav class="navbar">
+            <a href="#Home" class="active">Home</a>
+            <a href="#About">About</a>
+            <a href="#Service">Services</a>
+            <a href="#Portfolio">Portfolio</a>
+            <a href="#Contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section class="home" id="Home">
+        <div class="home-content">
+            <h3>Hello, it's me</h3>
+            <h1>Siva K</h1>
+            <h3>And I'm a <span>Full Stack Developer</span></h3>
+            <p>BSc Computer Science student at S.T. Hindu College, Nagercoil. 
+               Certified in Full Stack Java Development with expertise in Flask, 
+               Python, and modern web technologies. Creator of Triowise - a multi-vendor 
+               e-commerce marketplace.</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/sivaz_offcl/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/siva-k-071107112k5" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/Siva7112k5?tab=repositories" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="mailto:ksiva2005@gmail.com"><i class='bx bxl-gmail'></i></a>
+            </div>
+            <a href="#" class="btn" onclick="downloadCV()">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="images/profile.png" alt="Siva K">
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="About">
+        <div class="about-img">
+            <img src="images/about.png" alt="About Siva">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Full Stack Developer & BSc Computer Science Student</h3>
+            <p>I'm currently pursuing my Bachelor of Science in Computer Science at <strong>S.T. Hindu College, Nagercoil</strong>. I've completed a <strong>Diploma in Full Stack Java Development</strong> and have expertise in <strong>Zoho Creator</strong> for low-code application development.</p>
+            
+            <p>My major project <strong>"Triowise"</strong> is a fully functional multi-vendor e-commerce marketplace built with Flask, SQLAlchemy, and modern web technologies. The platform features user authentication, product management, shopping cart, wishlist, order processing, admin dashboard, and advanced features like voice search and dark mode.</p>
+            
+            <p><strong>Education:</strong> BSc Computer Science (2023-2026) - S.T. Hindu College, Nagercoil</p>
+            <p><strong>Certifications:</strong> Diploma in Full Stack Java Development, Zoho Creator Specialist</p>
+            
+            <a href="#Portfolio" class="btn">View My Projects</a>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="service" id="Service">
+        <h2 class="heading">My <span>Services</span></h2>
+        <div class="service-container">
+            <div class="service-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Web Development</h3>
+                <p>Full-stack web applications using Flask, Python, SQLAlchemy, HTML5, CSS3, and JavaScript. Building responsive, scalable, and secure websites with modern UI/UX principles.</p>
+                <a href="#Portfolio" class="btn">View Projects</a>
+            </div>
+            <div class="service-box">
+                <i class='bx bxl-java'></i>
+                <h3>Java Development</h3>
+                <p>Certified Full Stack Java Developer with expertise in core Java, Spring Boot, and enterprise application development. Creating robust backend systems and desktop applications.</p>
+                <a href="#Portfolio" class="btn">Learn More</a>
+            </div>
+            <div class="service-box">
+                <i class='bx bx-data'></i>
+                <h3>Zoho Creator</h3>
+                <p>Specialized in low-code application development using Zoho Creator. Building custom business applications, automated workflows, and integrated solutions for small to medium businesses.</p>
+                <a href="#Contact" class="btn">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio" id="Portfolio">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="https://picsum.photos/id/0/600/400" alt="Triowise E-Commerce">
+                <div class="project-layer">
+                    <h4>Triowise Marketplace</h4>
+                    <p>Multi-vendor e-commerce platform with Flask</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://picsum.photos/id/1/600/400" alt="Java Banking App">
+                <div class="project-layer">
+                    <h4>Banking Application</h4>
+                    <p>Full-stack Java banking system</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://picsum.photos/id/2/600/400" alt="Zoho CRM">
+                <div class="project-layer">
+                    <h4>Zoho CRM Integration</h4>
+                    <p>Custom business solution on Zoho Creator</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://picsum.photos/id/3/600/400" alt="Portfolio Website">
+                <div class="project-layer">
+                    <h4>Personal Portfolio</h4>
+                    <p>Responsive portfolio with dark mode</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://picsum.photos/id/4/600/400" alt="Weather App">
+                <div class="project-layer">
+                    <h4>Weather Dashboard</h4>
+                    <p>Real-time weather app with API integration</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://picsum.photos/id/5/600/400" alt="Task Manager">
+                <div class="project-layer">
+                    <h4>Task Manager</h4>
+                    <p>Full-stack productivity application</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="Contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+        <form action="#" method="POST" id="contactForm">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject" required>
+            </div>
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+        
+        <div class="contact-info">
+            <p><i class='bx bx-envelope'></i> ksivakannan2005@gmail.com</p>
+            <p><i class='bx bx-phone'></i> +91 90433 45140</p>
+            <p><i class='bx bx-map'></i> Thovalai, Kanyakumari, Tamilnadu - 629302</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2026 by Siva K | BSc Computer Science, S.T. Hindu College, Nagercoil</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#Home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+   
+    <script src="script.js.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <script>
+        // Mobile Menu Toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+        
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            menuIcon.classList.toggle('bx-x');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                menuIcon.classList.remove('bx-x');
+            });
+        });
+        
+        // Active link highlighting on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.navbar a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // ScrollReveal Animations
+        ScrollReveal({
+            distance: '80px',
+            duration: 2000,
+            delay: 200
+        });
+        
+        ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+        ScrollReveal().reveal('.home-img, .service-box, .project-card', { origin: 'bottom' });
+        ScrollReveal().reveal('.about-img', { origin: 'left' });
+        ScrollReveal().reveal('.about-content', { origin: 'right' });
+        
+        // Download CV function
+        function downloadCV() {
+            // Create a sample CV - in real project, link to actual PDF
+            alert('CV download will be available soon!');
+        }
+        
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
