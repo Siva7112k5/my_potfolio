@@ -151,18 +151,18 @@
     <section class="contact" id="Contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form action="#" method="POST" id="contactForm">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject" required>
-            </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </form>
+      <form action="#" method="POST" id="contactForm">
+    <div class="input-box">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+    </div>
+    <div class="input-box">
+        <input type="number" id="mobile" placeholder="Mobile Number">
+        <input type="text" id="subject" placeholder="Email Subject" required>
+    </div>
+    <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+    <input type="submit" value="Send Message" class="btn">
+</form>
         
         <div class="contact-info">
             <p><i class='bx bx-envelope'></i> ksivakannan2005@gmail.com</p>
@@ -179,10 +179,96 @@
             <a href="#Home"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
-   
+       <!-- Notification element -->
+    <div class="notification" id="liveToast">✅ Message stored in Firebase!</div>
     <script src="script.js.js"></script>
+    <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     
+
+
+    <!-- Firebase SDK (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Initialize Firebase
+
+
+// ADD THIS LINE BELOW
+const toast = document.getElementById('liveToast'); 
+const contactForm = document.getElementById('contactForm');
+        // Firebase configuration (same as provided)
+        const firebaseConfig = {
+            apiKey: "AIzaSyD1-_ze-BMFsRvjytLy1FauFtkO_MMIXD4",
+            authDomain: "potfolio-contactmessages.firebaseapp.com",
+            projectId: "potfolio-contactmessages",
+            storageBucket: "potfolio-contactmessages.firebasestorage.app",
+            messagingSenderId: "863070047738",
+            appId: "1:863070047738:web:489a43c089b0799fe82843",
+            measurementId: "G-DS9R2N6KZB"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+       
+        // Show toast notification
+        function showToast(msg) {
+            toast.textContent = msg || '✅ Message stored in Firebase!';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        // FORM SUBMISSION - FIREBASE STORAGE (corrected script)
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!fullName || !email || !subject || !message) {
+                alert('Please fill all required fields');
+                return;
+            }
+
+            // Disable button during submission
+            const submitBtn = contactForm.querySelector('input[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.value = 'Sending...';
+
+            try {
+                // Add a document to "contacts" collection with auto-ID
+                await db.collection('contacts').add({
+                    fullName: fullName,
+                    email: email,
+                    mobile: mobile || '',
+                    subject: subject,
+                    message: message,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+                // Success
+                showToast('✅ Message sent & saved to Firebase!');
+                contactForm.reset();
+
+            } catch (error) {
+                console.error('Firestore error:', error);
+                alert('Error sending message. Check console.');
+                showToast('❌ Failed. Check console.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.value = 'Send Message';
+            }
+        });
+    </script>
+    <!-- No extra firebase modules needed; compat handles it -->
+
     <script>
         // Mobile Menu Toggle
         const menuIcon = document.getElementById('menu-icon');
@@ -241,12 +327,13 @@
             alert('CV download will be available soon!');
         }
         
-        // Form submission handler
+      /*   // Form submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon.');
             this.reset();
-        });
+        }); */
     </script>
+    
 </body>
 </html>

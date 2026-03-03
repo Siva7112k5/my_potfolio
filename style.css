@@ -555,3 +555,18 @@ span { color: var(--main-color); }
         text-align: center;
     }
 }
+
+     .notification {
+            position: fixed;
+            bottom: 2rem; right: 2rem;
+            background: var(--main-color);
+            color: var(--second-bg-color);
+            padding: 1.5rem 2.5rem;
+            border-radius: 1rem;
+            font-size: 1.6rem;
+            box-shadow: 0 0 2rem rgba(0,0,0,0.3);
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .notification.show { transform: translateX(0); }
